@@ -19,15 +19,5 @@ function createGallery(galleryItems) {
 
 galleryList.insertAdjacentHTML(`afterbegin`, gallery)
 
-galleryList.addEventListener(`click`, onPictureClick);
-
-function onPictureClick(event) {
-    event.preventDefault();
-
-    if (!event.target.classList.contains(`gallery__image`)) {
-        return
-    }
-
-    var lightbox = new SimpleLightbox('.gallery a', { captionsData: `alt`, captionPosition: `bottom`, captionDelay: 250 });
-
-}
+galleryList.addEventListener(`click`, new SimpleLightbox('.gallery a', { captionsData: `alt`, captionPosition: `bottom`, captionDelay: 250 })
+);
